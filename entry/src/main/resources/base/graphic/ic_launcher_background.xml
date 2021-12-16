@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:ohos="http://schemas.huawei.com/res/ohos"
+        ohos:width="108vp"
+        ohos:height="108vp"
+        ohos:viewportHeight="108"
+        ohos:viewportWidth="108">
+    <path
+        ohos:fillColor="#26A69A"
+        ohos:pathData="M0,0h108v108h-108z" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M9,0L9,108"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M19,0L19,108"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M29,0L29,108"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M39,0L39,108"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M49,0L49,108"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M59,0L59,108"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M69,0L69,108"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M79,0L79,108"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M89,0L89,108"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M99,0L99,108"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M0,9L108,9"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M0,19L108,19"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M0,29L108,29"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M0,39L108,39"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M0,49L108,49"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M0,59L108,59"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M0,69L108,69"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M0,79L108,79"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M0,89L108,89"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M0,99L108,99"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M19,29L89,29"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M19,39L89,39"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M19,49L89,49"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M19,59L89,59"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M19,69L89,69"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M19,79L89,79"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M29,19L29,89"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M39,19L39,89"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M49,19L49,89"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M59,19L59,89"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M69,19L69,89"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+    <path
+        ohos:fillColor="#00000000"
+        ohos:pathData="M79,19L79,89"
+        ohos:strokeColor="#33FFFFFF"
+        ohos:strokeWidth="0.8" />
+</vector>

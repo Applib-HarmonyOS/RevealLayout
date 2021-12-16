@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Image xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:width="100vp"
+    ohos:height="100vp"
+    ohos:scale_mode="stretch"
+    ohos:image_src="$media:like_solid"
+       ohos:alignment="center"
+    ohos:background_element="$color:white"/>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<StackLayout xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    xmlns:app="http://schemas.huawei.com/res-auto"
+    xmlns:tools="http://schemas.huawei.com/tools"
+    ohos:background_element="#111111"
+    ohos:width="match_parent"
+    ohos:height="match_parent">
+
+    <DirectionalLayout
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:orientation="horizontal"
+        tools:context=".MainActivity">
+
+        <DirectionalLayout
+            ohos:width="0vp"
+            ohos:height="match_content"
+            ohos:weight="1"
+            ohos:alignment="center"
+            ohos:orientation="vertical">
+
+            <Text
+                ohos:width="match_parent"
+                ohos:height="70vp"
+                ohos:text_alignment="center"
+                ohos:text="Rollback during support"
+                ohos:text_color="#eeffffff"
+                ohos:text_size="30vp" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_follow_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_follow_unchecked" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:id="$+id:reveal_layout"
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_follow_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_follow_unchecked" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_follow_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_follow_unchecked" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_follow_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_follow_unchecked" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_like_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_like_unchecked" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_like_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_like_unchecked" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_like_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_like_unchecked" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_like_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_like_unchecked" />
+
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:width="0vp"
+            ohos:height="match_content"
+            ohos:weight="1"
+            ohos:alignment="center"
+            ohos:orientation="vertical">
+
+            <Text
+                ohos:width="match_parent"
+                ohos:height="70vp"
+                ohos:text_alignment="center"
+                ohos:text="Rollback during the process is not supported"
+                ohos:text_color="#eeffffff"
+                ohos:text_size="30vp" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_follow_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_follow_unchecked" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:id="$+id:reveal_layout2"
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_follow_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_follow_unchecked" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_follow_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_follow_unchecked" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_follow_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_follow_unchecked" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_like_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_like_unchecked" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_like_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_like_unchecked" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_like_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_like_unchecked" />
+
+            <per.goweii.reveallayout.RevealLayout
+                ohos:width="match_content"
+                ohos:height="match_content"
+                ohos:padding="15vp"
+                app:rl_allowRevert="false"
+                app:rl_animDuration="1000"
+                app:rl_checkWithExpand="true"
+                app:rl_checked="false"
+                app:rl_checkedLayout="$layout:reveal_layout_like_checked"
+                app:rl_uncheckWithExpand="true"
+                app:rl_uncheckedLayout="$layout:reveal_layout_like_unchecked" />
+
+        </DirectionalLayout>
+
+    </DirectionalLayout>
+
+</StackLayout>

@@ -1,0 +1,27 @@
+{
+  "app": {
+    "bundleName": "per.goweii.reveallayout.hmservice",
+    "vendor": "goweii",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {
+  },
+  "module": {
+    "package": "per.goweii.reveallayout",
+    "deviceType": [
+      "phone",
+      "tablet",
+      "tv",
+      "wearable",
+      "car"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "reveallayout",
+      "moduleType": "har"
+    }
+  }
+}
