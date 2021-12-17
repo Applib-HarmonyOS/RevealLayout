@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package per.goweii.reveallayout.utils;
 
 import ohos.agp.components.AttrSet;
-import ohos.agp.components.element.Element;
 import ohos.hiviewdfx.HiLog;
 import ohos.hiviewdfx.HiLogLabel;
 
@@ -51,26 +51,6 @@ public class AttrUtils {
     }
 
     /**
-     * Function to get float value from attribute.
-     *
-     * @param attrs        Attribute set
-     * @param name         String name
-     * @param defaultValue default value
-     * @return float value
-     */
-    public static float getFloatFromAttr(AttrSet attrs, String name, float defaultValue) {
-        float value = defaultValue;
-        try {
-            if (attrs.getAttr(name).isPresent() && attrs.getAttr(name).get() != null) {
-                value = attrs.getAttr(name).get().getFloatValue();
-            }
-        } catch (Exception exception) {
-            HiLog.error(HILOG_LABEL, "exception in getFloatFromAttr");
-        }
-        return value;
-    }
-
-    /**
      * Function to get boolean value from attribute.
      *
      * @param attrs        Attribute set
@@ -88,86 +68,6 @@ public class AttrUtils {
             HiLog.error(HILOG_LABEL, "exception in getBooleanFromAttr");
         }
         return value;
-    }
-
-    /**
-     * Function to get long value from attribute.
-     *
-     * @param attrs        Attribute set
-     * @param name         String name
-     * @param defaultValue default value
-     * @return long value
-     */
-    public static long getLongFromAttr(AttrSet attrs, String name, long defaultValue) {
-        long value = defaultValue;
-        try {
-            if (attrs.getAttr(name).isPresent() && attrs.getAttr(name).get() != null) {
-                value = attrs.getAttr(name).get().getLongValue();
-            }
-        } catch (Exception exception) {
-            HiLog.error(HILOG_LABEL, "exception in getLongFromAttr");
-        }
-        return value;
-    }
-
-    /**
-     * Function to get colour value from attribute.
-     *
-     * @param attrs        Attribute set
-     * @param name         String name
-     * @param defaultValue default value
-     * @return colour value
-     */
-    public static int getColorFromAttr(AttrSet attrs, String name, int defaultValue) {
-        int value = defaultValue;
-        try {
-            if (attrs.getAttr(name).isPresent() && attrs.getAttr(name).get() != null) {
-                value = attrs.getAttr(name).get().getColorValue().getValue();
-            }
-        } catch (Exception exception) {
-            HiLog.error(HILOG_LABEL, "exception in getColorFromAttr");
-        }
-        return value;
-    }
-
-    /**
-     * Function to get dimension value from attribute.
-     *
-     * @param attrs        Attribute set
-     * @param name         String name
-     * @param defaultValue default value
-     * @return value
-     */
-    public static int getDimensionFromAttr(AttrSet attrs, String name, int defaultValue) {
-        int value = defaultValue;
-        try {
-            if (attrs.getAttr(name).isPresent() && attrs.getAttr(name).get() != null) {
-                value = attrs.getAttr(name).get().getDimensionValue();
-            }
-        } catch (Exception exception) {
-            HiLog.error(HILOG_LABEL, "exception in getDimensionFromAttr");
-        }
-        return value;
-    }
-
-    /**
-     * Function to get dimension value from attribute.
-     *
-     * @param attrs        Attribute set
-     * @param name         String name
-     * @param defaultValue default value
-     * @return value
-     */
-    public static int getDimensionFromAttr(AttrSet attrs, String name, float defaultValue) {
-        float value = defaultValue;
-        try {
-            if (attrs.getAttr(name).isPresent() && attrs.getAttr(name).get() != null) {
-                value = attrs.getAttr(name).get().getDimensionValue();
-            }
-        } catch (Exception exception) {
-            HiLog.error(HILOG_LABEL, "exception in getDimensionFromAttr");
-        }
-        return (int) value;
     }
 
     /**
@@ -205,44 +105,6 @@ public class AttrUtils {
             }
         } catch (Exception exception) {
             HiLog.error(HILOG_LABEL, "exception in getStringFromAttr");
-        }
-        return value;
-    }
-
-    /**
-     * Function to get char sequence value from attribute.
-     *
-     * @param attrs Attribute set
-     * @param name  String name
-     * @return CharSequence value
-     */
-    public static CharSequence getCharSequenceFromAttr(AttrSet attrs, String name) {
-        CharSequence value = "";
-        try {
-            if (attrs.getAttr(name).isPresent() && attrs.getAttr(name).get() != null) {
-                value = attrs.getAttr(name).get().getStringValue();
-            }
-        } catch (Exception exception) {
-            HiLog.error(HILOG_LABEL, "exception in getCharSequenceFromAttr");
-        }
-        return value;
-    }
-
-    /**
-     * Function to get element value from attribute.
-     *
-     * @param attrs Attribute set
-     * @param name  String name
-     * @return Element value
-     */
-    public static Element getElementFromAttr(AttrSet attrs, String name) {
-        Element value = null;
-        try {
-            if (attrs.getAttr(name).isPresent() && attrs.getAttr(name).get() != null) {
-                value = attrs.getAttr(name).get().getElement();
-            }
-        } catch (Exception exception) {
-            HiLog.error(HILOG_LABEL, "exception in getElementFromAttr");
         }
         return value;
     }

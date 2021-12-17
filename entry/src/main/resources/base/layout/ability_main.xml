@@ -9,7 +9,7 @@
     <per.goweii.reveallayout.RevealLayout
         ohos:width="match_parent"
         ohos:height="match_parent"
-        app:rl_allowRevert="true"
+        app:rl_allowRevert="false"
         app:rl_animDuration="1000"
         app:rl_checkWithExpand="true"
         app:rl_checked="false"

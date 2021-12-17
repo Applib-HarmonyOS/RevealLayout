@@ -6,11 +6,13 @@ Reveal the effect layout, you can specify 2 sub-layouts, and switch the selected
 
 ## Source
 
-The code in this repository was inspired from https://github.com/goweii/RevealLayout. We are very thankful to goweii Goweii and mbacuiz.
+The code in this repository was inspired from [goweii/RevealLayout - v1.3.4](https://github.com/goweii/RevealLayout). 
+We are very thankful to goweii Goweii and mbacuiz.
 
 ## Screenshot
 
-Refer the following path(root->Images).
+![Layout_ability_main](Images/RevealLayoutImage.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Integration method
 
@@ -20,7 +22,8 @@ In order to use the library, add the following line to your **root** gradle file
 
 
 1. Add dependency in build.gradle of project app directory
-Starting from version 4.13.1, v is not added before the version number, and you need to pay attention to it when quoting.
+Starting from version 4.13.1, v is not added before the version number, and you need to pay attention to it when 
+quoting.
 ```
     dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
@@ -29,14 +32,16 @@ Starting from version 4.13.1, v is not added before the version number, and you 
     implementation project(':reveallayout')
 }
 ```
-2. For using reveallayout in separate application using har file, add the har file in the entry/libs folder and add the dependencies in entry/build.gradle file.
+2. For using reveallayout in separate application using har file, add the har file in the entry/libs folder and add the 
+dependencies in entry/build.gradle file.
 ```groovy
 	dependencies {
 		implementation fileTree(dir: 'libs', include: ['*.har'])
 		testImplementation 'junit:junit:4.13'
 	}
 ```
-3. For using RevealLayout from a remote repository in separate application, add the below dependencies in entry/build.gradle file.
+3. For using RevealLayout from a remote repository in separate application, add the below dependencies in 
+entry/build.gradle file.
 ```
     dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -67,7 +72,8 @@ To use RevealLayout in your app simply follow below simple steps:
 
 #### Custom subclass
 
-For example, a follow and unfollow control FollowView only needs to inherit RevealLayout, and then copy the following 3 methods:
+For example, a follow and unfollow control FollowView only needs to inherit RevealLayout, and then copy the following 
+3 methods:
 
 initAttr(AttributeSet attrs): Get the custom attributes of the subclass
 createCheckedView(): Create a selected state view and initialize custom properties

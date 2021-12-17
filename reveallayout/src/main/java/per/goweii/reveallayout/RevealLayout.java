@@ -3,7 +3,12 @@ package per.goweii.reveallayout;
 import ohos.agp.animation.Animator;
 import ohos.agp.animation.AnimatorValue;
 import ohos.agp.animation.AnimatorValue.ValueUpdateListener;
-import ohos.agp.components.*;
+import ohos.agp.components.Component;
+import ohos.agp.components.Component.TouchEventListener;
+import ohos.agp.components.LayoutScatter;
+import ohos.agp.components.StackLayout;
+import ohos.agp.components.AttrSet;
+import ohos.agp.components.ComponentContainer;
 import ohos.agp.render.Path;
 import ohos.agp.render.Path.Direction;
 import ohos.app.Context;
@@ -19,7 +24,8 @@ import per.goweii.reveallayout.utils.AttrUtils;
  * @date 2018/9/25
  */
 public class RevealLayout extends StackLayout implements Checkable, ValueUpdateListener, Animator.StateChangedListener,
-        Component.TouchEventListener {
+        TouchEventListener {
+
     private Component mCheckedView;
     private Component mUncheckedView;
     private int mCheckedLayoutId = 0;
@@ -40,25 +46,49 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     private static final String VIEW_CHECKED = "rl_checkedLayout";
     private static final String VIEW_UNCHECKED = "rl_uncheckedLayout";
 
+    /**
+     *It is a constructor.
+     *
+     * @param context
+     */
     public RevealLayout(Context context) {
         this(context, null);
         setTouchEventListener(this);
     }
 
+    /**
+     * It is a constructor.
+     *
+     * @param context
+     * @param attrs
+     */
     public RevealLayout(Context context, AttrSet attrs) {
         this(context, attrs, 0);
         setTouchEventListener(this);
     }
 
+    /**
+     * It is a constructor.
+     *
+     * @param context
+     * @param attrs
+     * @param defStyleAttr
+     */
     public RevealLayout(Context context, AttrSet attrs, int defStyleAttr) {
         super(context, attrs);
         initAttr(attrs);
         initView(context);
         setTouchEventListener(this);
         setClickedListener(this);
-
     }
 
+    /**
+     * Registers a listener for click events in the component.
+     * When the position of a click is within the component's display area, a click event is triggered,
+     * and all registered observers are notified.
+     *
+     * @param getCurvedTimeRevealLayout
+     */
     private void setClickedListener(RevealLayout getCurvedTimeRevealLayout) {
         toggle();
     }
@@ -70,35 +100,26 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      *
      * @param attrs AttributeSet
      */
-
     protected void initAttr(AttrSet attrs) {
-        /*String checkedLayoutId = AttrUtils.getStringFromAttr(attrs, "rl_checkedLayout");
-        String unCheckedLayoutId = AttrUtils.getStringFromAttr(attrs, "rl_uncheckedLayout");
-        if(checkedLayoutId.contains(":")){
-            mCheckedLayoutId = Integer.valueOf(checkedLayoutId.split(":")[1]);
-        }
-        if(unCheckedLayoutId.contains(":")){
-            mCheckedLayoutId = Integer.valueOf(checkedLayoutId.split(":")[1]);
-        }*/
         mChecked = AttrUtils.getBooleanFromAttr(attrs, "rl_checked", mChecked);
         mAnimDuration = AttrUtils.getIntFromAttr(attrs, "rl_animDuration", mAnimDuration);
         mCheckWithExpand = AttrUtils.getBooleanFromAttr(attrs, "rl_checkWithExpand", mCheckWithExpand);
         mUncheckWithExpand = AttrUtils.getBooleanFromAttr(attrs, "rl_uncheckWithExpand", mUncheckWithExpand);
         mAllowRevert = AttrUtils.getBooleanFromAttr(attrs, "rl_allowRevert", mAllowRevert);
         mHideBackView = AttrUtils.getBooleanFromAttr(attrs, "rl_hideBackView", mHideBackView);
-        if(null != attrs) {
+        if (null != attrs) {
             boolean isPresent = attrs.getAttr(VIEW_CHECKED).isPresent();
             String viewString = "";
             if (isPresent) {
                 viewString = attrs.getAttr(VIEW_CHECKED).get().getStringValue();
-                if(viewString.contains(":")){
+                if (viewString.contains(":")){
                     mCheckedLayoutId = Integer.valueOf(viewString.split(":")[1]);
                 }
             }
             isPresent = attrs.getAttr(VIEW_UNCHECKED).isPresent();
             if (isPresent) {
                 viewString = attrs.getAttr(VIEW_UNCHECKED).get().getStringValue();
-                if(viewString.contains(":")){
+                if (viewString.contains(":")){
                     mUncheckedLayoutId = Integer.valueOf(viewString.split(":")[1]);
                 }
             }
@@ -131,9 +152,13 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
         hideBackView();
     }
 
+    /**
+     * To set the layout with width and height.
+     *
+     * @return
+     */
     private LayoutConfig getDefaultLayoutParams() {
-        LayoutConfig params = new LayoutConfig(LayoutConfig.MATCH_PARENT, LayoutConfig.MATCH_PARENT);
-        return params;
+        return new LayoutConfig(LayoutConfig.MATCH_PARENT, LayoutConfig.MATCH_PARENT);
     }
 
     /**
@@ -143,12 +168,21 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      */
     protected Component createCheckedView(Context context) {
         Component checkedView;
-        if (mCheckedLayoutId > 0) {
-            checkedView = LayoutScatter.getInstance(getContext()).parse(mCheckedLayoutId, null, false);
+        if (getCheckedLayoutId() > 0) {
+            checkedView = LayoutScatter.getInstance(getContext()).parse(getCheckedLayoutId(), null, false);
         } else {
             checkedView = new Component(getContext());
         }
         return checkedView;
+    }
+
+    /**
+     * Function will return the checkedview Layout resource.
+     *
+     * @return
+     */
+    protected int getCheckedLayoutId() {
+        return mCheckedLayoutId;
     }
 
     /**
@@ -158,8 +192,8 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      */
     protected Component createUncheckedView(Context context) {
         Component uncheckedView;
-        if (mUncheckedLayoutId > 0) {
-            uncheckedView = LayoutScatter.getInstance(getContext()).parse(mUncheckedLayoutId, this,
+        if (getUncheckedLayoutId() > 0) {
+            uncheckedView = LayoutScatter.getInstance(getContext()).parse(getUncheckedLayoutId(), this,
                     false);
         } else {
             uncheckedView = new Component(getContext());
@@ -167,9 +201,25 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
         return uncheckedView;
     }
 
+    /**
+     * Function will return the uncheckedview Layout resource.
+     *
+     * @return
+     */
+    protected int getUncheckedLayoutId() {
+        return mUncheckedLayoutId;
+    }
+
+    /**
+     * Processes a touch event dispatched to a component.
+     * The listener responds to a touch event before the target component receives the event.
+     *
+     * @param component component
+     * @param event event
+     * @return true/false
+     */
     @Override
     public boolean onTouchEvent(Component component, TouchEvent event) {
-        final int action = event.getAction();
         int actionIndex = event.getIndex();
         int index = event.getPointerId(actionIndex);
         MmiPoint point = event.getPointerPosition(index);
@@ -191,6 +241,11 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
         }
     }
 
+    /**
+     * Performs a click event in a component.
+     *
+     * @return Returns true if the callback function is executed successfully.
+     */
     @Override
     public boolean simulateClick() {
         toggle();
@@ -198,94 +253,68 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     }
 
     /**
-     * Create reveal animation
+     * Determine whether the touch position is inside the view and whether it is a legal click
+     *
+     * @param x Touch point x coordinate
+     * @param y Touch point y coordinate
+     * @return Is the click legal
      */
+    private boolean isValidClick(float x, float y) {
+        return x >= 0 && x <= getWidth() && /* - getPaddingLeft() - getPaddingRight()*/
+                y >= 0 && y <= getHeight();
+    }
 
+    /**
+     * Create reveal animation.
+     */
     private AnimatorValue createRevealAnim() {
         float[] value = calculateAnimOfFloat();
         mRevealRadius = value[0];
         mStart = value[0];
         mEnd = value[1];
         AnimatorValue animator = new AnimatorValue();
-        animator.setCurveType(Animator.CurveType.BOUNCE);
+        animator.setCurveType(Animator.CurveType.CYCLE);
         animator.setDuration(mAnimDuration);
         animator.setValueUpdateListener(this);
         animator.setStateChangedListener(this);
         return animator;
     }
-    /*private ValueAnimator createRevealAnim() {
-        float[] value = calculateAnimOfFloat();
-        mRevealRadius = value[0];
-        //AnimatorValue animator = new AnimatorValue();
-        //animator.setCurveType(Animator.CurveType.BOUNCE);
-        //animator.setDuration(mAnimDuration);
-        //animator.setValueUpdateListener(this);
-        //animator.setStateChangedListener(this);
-        //ValueAnimator animator;
-        ValueAnimator animator = ValueAnimator.ofFloat(value[0], value[1]);
-        animator.setValueUpdateListener((animatorValue, v) -> {
-            mRevealRadius = v;
-            resetPath();
-            invalidate();
-            //postLayout();
-        });
-        animator.setStateChangedListener(new Animator.StateChangedListener() {
-            @Override
-            public void onStart(Animator animator) {
-                //Do Nothing
-            }
 
-            @Override
-            public void onStop(Animator animator) {
-                //Do Nothing
-            }
-
-            @Override
-            public void onCancel(Animator animator) {
-                //Do Nothing
-            }
-
-            @Override
-            public void onEnd(Animator animator) {
-               if (changed) {
-                    if (mStatus == Status.OPEN) {
-                        checkAndFirstOpenPanel();
-                    }
-
-                    if (null != mOnSlideDetailsListener) {
-                        mOnSlideDetailsListener.onStatusChanged(mStatus);
-                    }
-                }
-            }
-
-            @Override
-            public void onPause(Animator animator) {
-                //Do Nothing
-            }
-
-            @Override
-            public void onResume(Animator animator) {
-                //Do Nothing
-            }
-        });
-        animator.setDuration(mAnimDuration);
-        return animator;
-    }*/
-
+    /**
+     * Receives a notification indicating that an animator has started.
+     *
+     * @param animation animator
+     */
     @Override
     public void onStart(Animator animation) {
         resetPath();
         bringCurrentViewToFront();
     }
 
+    /**
+     * Receives a notification indicating that an animator has stopped. This method must be called before the onEnd and
+     * onCancel methods.
+     *
+     * @param animator animator
+     */
     @Override
     public void onStop(Animator animator) {
     }
 
+    /**
+     * Receives a notification indicating that an animator has been canceled.
+     *
+     * @param animator animator
+     */
     @Override
     public void onCancel(Animator animator) {
     }
 
+    /**
+     * Receives a notification indicating that an animator has ended.
+     *
+     * @param animator animator
+     */
     @Override
     public void onEnd(Animator animator) {
         mAnimator = null;
@@ -294,14 +323,27 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
         resetCenter();
     }
 
+    /**
+     * Receives a notification indicating that an animator is paused.
+     *
+     * @param animator animator
+     */
     @Override
     public void onPause(Animator animator) {
     }
 
+    /**
+     * Receives a notification indicating that an animator is resumed.
+     *
+     * @param animator animator
+     */
     @Override
     public void onResume(Animator animator) {
     }
 
+    /**
+     *Calculate the onAnimationReverse.
+     */
     public void onAnimationReverse() {
     }
 
@@ -336,6 +378,9 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
         return new float[] { fromValue, toValue };
     }
 
+    /**
+     * It will reset the path with direction.
+     */
     private void resetPath() {
         mPath.reset();
         mPath.addCircle(mCenterX, mCenterY, mRevealRadius, Direction.COUNTER_CLOCK_WISE);
@@ -353,6 +398,9 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
         }
     }
 
+    /**
+     * Bringing the views into front.
+     */
     private void bringFrontView() {
         if (mChecked) {
             moveChildToFront(mCheckedView);
@@ -361,11 +409,17 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
         }
     }
 
+    /**
+     * Two views are making into visible.
+     */
     private void showTwoView() {
         mCheckedView.setVisibility(VISIBLE);
         mUncheckedView.setVisibility(VISIBLE);
     }
 
+    /**
+     * Making the back views invisible.
+     */
     private void hideBackView() {
         if (!mHideBackView) {
             return;
@@ -417,6 +471,11 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
         return (float) Math.hypot(x, y);
     }
 
+    /**
+     * Registers a listener for click events in the component.
+     *
+     * @param onClickListener listener
+     */
     @Override
     public void setClickedListener(ClickedListener onClickListener) {
         super.setClickedListener(onClickListener);
@@ -462,10 +521,6 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
         }
     }
 
-    @Override
-    public void ComponentPosition(boolean changed, int left, int top, int right, int bottom) {
-    }
-
     /**
      * Set selected state
      *
@@ -504,6 +559,9 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
         setChecked(!mChecked);
     }
 
+    /**
+     * It will reset the view with position.
+     */
     public void resetCenter() {
         float w = getEstimatedWidth();
         float h = getEstimatedHeight();
@@ -515,35 +573,69 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
         mCenterY = t + ((h - t - b) / 2F);
     }
 
+    /**
+     * Sets the center coordinates for the display resizing rectangle.
+     */
     public void setCenter(float centerX, float centerY) {
         mCenterX = centerX;
         mCenterY = centerY;
     }
 
+    /**
+     * Obtains the X coordinate of the center in this display resizing rectangle.
+     */
     public float getCenterX() {
         return mCenterX;
     }
 
+    /**
+     * Obtains the Y coordinate of the center in this display resizing rectangle.
+     */
     public float getCenterY() {
         return mCenterY;
     }
 
+    /**
+     * Set the button to revert.
+     *
+     * @param allowRevert
+     */
     public void setAllowRevert(boolean allowRevert) {
         mAllowRevert = allowRevert;
     }
 
+    /**
+     * Set the Animduration which is passed from layout.
+     *
+     * @param animDuration
+     */
     public void setAnimDuration(int animDuration) {
         mAnimDuration = animDuration;
     }
 
+    /**
+     * Set the checked button to expand.
+     *
+     * @param checkWithExpand
+     */
     public void setCheckWithExpand(boolean checkWithExpand) {
         mCheckWithExpand = checkWithExpand;
     }
 
+    /**
+     * Set the unchecked button to expand.
+     *
+     * @param uncheckWithExpand
+     */
     public void setUncheckWithExpand(boolean uncheckWithExpand) {
         mUncheckWithExpand = uncheckWithExpand;
     }
 
+    /**
+     * set the view as checked.
+     *
+     * @param checkedView
+     */
     public void setCheckedView(Component checkedView) {
         if (checkedView == null) {
             return;
@@ -562,6 +654,11 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
         hideBackView();
     }
 
+    /**
+     * set the view as unchecked.
+     *
+     * @param uncheckedView
+     */
     public void setUncheckedView(Component uncheckedView) {
         if (uncheckedView == null) {
             return;
@@ -580,16 +677,31 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
         hideBackView();
     }
 
+    /**
+     * Function to set the checked layout with the given id.
+     *
+     * @param checkedLayoutId
+     */
     public void setCheckedLayoutId(int checkedLayoutId) {
         mCheckedLayoutId = checkedLayoutId;
         setCheckedView(createCheckedView(getContext()));
     }
 
+    /**
+     * Function to set the unchecked layout with the given id.
+     *
+     * @param uncheckedLayoutId
+     */
     public void setUncheckedLayoutId(int uncheckedLayoutId) {
         mUncheckedLayoutId = uncheckedLayoutId;
         setUncheckedView(createUncheckedView(getContext()));
     }
-
+    /**
+     * Receives a notification when a value animator is updated, and returns an output value for customizing animators.
+     *
+     * @param animatorValue animatorValue
+     * @param v
+     */
     @Override
     public void onUpdate(AnimatorValue animatorValue, float v) {
         mRevealRadius = v * (mEnd - mStart) + mStart;
