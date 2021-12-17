@@ -29,7 +29,13 @@ Starting from version 4.13.1, v is not added before the version number, and you 
     implementation project(':reveallayout')
 }
 ```
-
+2. For using reveallayout in separate application using har file, add the har file in the entry/libs folder and add the dependencies in entry/build.gradle file.
+```groovy
+	dependencies {
+		implementation fileTree(dir: 'libs', include: ['*.har'])
+		testImplementation 'junit:junit:4.13'
+	}
+```
 3. For using RevealLayout from a remote repository in separate application, add the below dependencies in entry/build.gradle file.
 ```
     dependencies {
