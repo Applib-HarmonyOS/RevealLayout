@@ -1,6 +1,7 @@
 package per.goweii.reveallayout;
 
 import java.util.logging.Logger;
+
 import ohos.agp.animation.Animator;
 import ohos.agp.animation.AnimatorValue;
 import ohos.agp.animation.AnimatorValue.ValueUpdateListener;
