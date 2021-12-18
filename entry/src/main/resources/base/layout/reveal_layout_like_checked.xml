@@ -5,4 +5,4 @@
     ohos:height="100vp"
     ohos:image_src="$media:like_solid"
     ohos:scale_mode="stretch"
-       ohos:background_element="$color:colorAccent"/>
+    ohos:background_element="$color:colorAccent"/>

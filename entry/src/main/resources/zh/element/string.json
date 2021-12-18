@@ -9,8 +9,19 @@
       "value": "Java_Empty Ability"
     },
     {
-      "name": "mainability_HelloWorld",
-      "value": "你好，世界"
+      "name": "checked_view",
+      "value": "已关注"
+    },
+    {
+      "name": "unchecked_view",
+      "value": "+ 关注"
+    },{
+      "name": "revert_supported",
+      "value": "支持过程中回滚"
+    },
+    {
+      "name": "revert_unsupported",
+      "value": "不支持过程中回滚"
     }
   ]
 }

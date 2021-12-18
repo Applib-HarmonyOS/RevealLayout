@@ -22,6 +22,8 @@ package per.goweii.reveallayout;
 public interface Checkable {
 
     void setChecked(boolean checked);
+
     boolean isChecked();
+
     void toggle();
 }

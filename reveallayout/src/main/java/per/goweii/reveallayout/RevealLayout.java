@@ -3,12 +3,12 @@ package per.goweii.reveallayout;
 import ohos.agp.animation.Animator;
 import ohos.agp.animation.AnimatorValue;
 import ohos.agp.animation.AnimatorValue.ValueUpdateListener;
+import ohos.agp.components.AttrSet;
 import ohos.agp.components.Component;
+import ohos.agp.components.ComponentContainer;
 import ohos.agp.components.Component.TouchEventListener;
 import ohos.agp.components.LayoutScatter;
 import ohos.agp.components.StackLayout;
-import ohos.agp.components.AttrSet;
-import ohos.agp.components.ComponentContainer;
 import ohos.agp.render.Path;
 import ohos.agp.render.Path.Direction;
 import ohos.app.Context;
@@ -47,9 +47,9 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     private static final String VIEW_UNCHECKED = "rl_uncheckedLayout";
 
     /**
-     *It is a constructor.
+     *It is a constructor call for RevealLayout.
      *
-     * @param context
+     * @param context Context
      */
     public RevealLayout(Context context) {
         this(context, null);
@@ -57,10 +57,10 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     }
 
     /**
-     * It is a constructor.
+     * It is a constructor call for RevealLayout.
      *
-     * @param context
-     * @param attrs
+     * @param context Context
+     * @param attrs AttrSet
      */
     public RevealLayout(Context context, AttrSet attrs) {
         this(context, attrs, 0);
@@ -68,11 +68,11 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     }
 
     /**
-     * It is a constructor.
+     * It is a constructor call for RevealLayout.
      *
-     * @param context
-     * @param attrs
-     * @param defStyleAttr
+     * @param context Context
+     * @param attrs AttrSet
+     * @param defStyleAttr int
      */
     public RevealLayout(Context context, AttrSet attrs, int defStyleAttr) {
         super(context, attrs);
@@ -87,10 +87,10 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      * When the position of a click is within the component's display area, a click event is triggered,
      * and all registered observers are notified.
      *
-     * @param getCurvedTimeRevealLayout
+     * @param getCurvedTimeRevealLayout RevealLayout
      */
     private void setClickedListener(RevealLayout getCurvedTimeRevealLayout) {
-        toggle();
+        getCurvedTimeRevealLayout.toggle();
     }
 
     /**
@@ -112,14 +112,14 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
             String viewString = "";
             if (isPresent) {
                 viewString = attrs.getAttr(VIEW_CHECKED).get().getStringValue();
-                if (viewString.contains(":")){
+                if (viewString.contains(":")) {
                     mCheckedLayoutId = Integer.valueOf(viewString.split(":")[1]);
                 }
             }
             isPresent = attrs.getAttr(VIEW_UNCHECKED).isPresent();
             if (isPresent) {
                 viewString = attrs.getAttr(VIEW_UNCHECKED).get().getStringValue();
-                if (viewString.contains(":")){
+                if (viewString.contains(":")) {
                     mUncheckedLayoutId = Integer.valueOf(viewString.split(":")[1]);
                 }
             }
@@ -155,7 +155,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     /**
      * To set the layout with width and height.
      *
-     * @return
+     * @return LayoutConfig values.
      */
     private LayoutConfig getDefaultLayoutParams() {
         return new LayoutConfig(LayoutConfig.MATCH_PARENT, LayoutConfig.MATCH_PARENT);
@@ -179,14 +179,14 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     /**
      * Function will return the checkedview Layout resource.
      *
-     * @return
+     * @return mCheckedLayoutId
      */
     protected int getCheckedLayoutId() {
         return mCheckedLayoutId;
     }
 
     /**
-     * Create a non-selected control, the subclass can override this method to initialize its own control
+     * Create a non-selected control, the subclass can override this method to initialize its own control.
      *
      * @return Unselected controls
      */
@@ -204,7 +204,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     /**
      * Function will return the uncheckedview Layout resource.
      *
-     * @return
+     * @return mUncheckedLayoutId
      */
     protected int getUncheckedLayoutId() {
         return mUncheckedLayoutId;
@@ -260,8 +260,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      * @return Is the click legal
      */
     private boolean isValidClick(float x, float y) {
-        return x >= 0 && x <= getWidth() && /* - getPaddingLeft() - getPaddingRight()*/
-                y >= 0 && y <= getHeight();
+        return x >= 0 && x <= getWidth() && y >= 0 && y <= getHeight();
     }
 
     /**
@@ -299,6 +298,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      */
     @Override
     public void onStop(Animator animator) {
+        return;
     }
 
     /**
@@ -308,6 +308,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      */
     @Override
     public void onCancel(Animator animator) {
+        return;
     }
 
     /**
@@ -330,6 +331,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      */
     @Override
     public void onPause(Animator animator) {
+        return;
     }
 
     /**
@@ -339,17 +341,19 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      */
     @Override
     public void onResume(Animator animator) {
+        return;
     }
 
     /**
      *Calculate the onAnimationReverse.
      */
     public void onAnimationReverse() {
+        return;
     }
 
     /**
      * Calculate the start and end radius of the animation based on the selected state and
-     * the diffusion effect of the revealed animation
+     * the diffusion effect of the revealed animation.
      *
      * @return {Starting radius, ending radius}
      */
@@ -598,7 +602,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     /**
      * Set the button to revert.
      *
-     * @param allowRevert
+     * @param allowRevert mAllowRevert
      */
     public void setAllowRevert(boolean allowRevert) {
         mAllowRevert = allowRevert;
@@ -607,7 +611,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     /**
      * Set the Animduration which is passed from layout.
      *
-     * @param animDuration
+     * @param animDuration mAnimDuration
      */
     public void setAnimDuration(int animDuration) {
         mAnimDuration = animDuration;
@@ -616,7 +620,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     /**
      * Set the checked button to expand.
      *
-     * @param checkWithExpand
+     * @param checkWithExpand mCheckWithExpand
      */
     public void setCheckWithExpand(boolean checkWithExpand) {
         mCheckWithExpand = checkWithExpand;
@@ -625,7 +629,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     /**
      * Set the unchecked button to expand.
      *
-     * @param uncheckWithExpand
+     * @param uncheckWithExpand mUncheckWithExpand
      */
     public void setUncheckWithExpand(boolean uncheckWithExpand) {
         mUncheckWithExpand = uncheckWithExpand;
@@ -634,7 +638,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     /**
      * set the view as checked.
      *
-     * @param checkedView
+     * @param checkedView mCheckedView
      */
     public void setCheckedView(Component checkedView) {
         if (checkedView == null) {
@@ -657,7 +661,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     /**
      * set the view as unchecked.
      *
-     * @param uncheckedView
+     * @param uncheckedView mUncheckedView
      */
     public void setUncheckedView(Component uncheckedView) {
         if (uncheckedView == null) {
@@ -680,7 +684,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     /**
      * Function to set the checked layout with the given id.
      *
-     * @param checkedLayoutId
+     * @param checkedLayoutId mCheckedLayoutId
      */
     public void setCheckedLayoutId(int checkedLayoutId) {
         mCheckedLayoutId = checkedLayoutId;
@@ -690,17 +694,18 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
     /**
      * Function to set the unchecked layout with the given id.
      *
-     * @param uncheckedLayoutId
+     * @param uncheckedLayoutId mUncheckedLayoutId
      */
     public void setUncheckedLayoutId(int uncheckedLayoutId) {
         mUncheckedLayoutId = uncheckedLayoutId;
         setUncheckedView(createUncheckedView(getContext()));
     }
+
     /**
      * Receives a notification when a value animator is updated, and returns an output value for customizing animators.
      *
-     * @param animatorValue animatorValue
-     * @param v
+     * @param animatorValue AnimatorValue
+     * @param v float
      */
     @Override
     public void onUpdate(AnimatorValue animatorValue, float v) {

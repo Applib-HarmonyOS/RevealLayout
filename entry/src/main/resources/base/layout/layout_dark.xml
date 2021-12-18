@@ -24,7 +24,7 @@
                 ohos:width="match_parent"
                 ohos:height="70vp"
                 ohos:text_alignment="center"
-                ohos:text="Rollback during support"
+                ohos:text="$string:revert_supported"
                 ohos:text_color="#eeffffff"
                 ohos:text_size="30vp" />
 
@@ -138,7 +138,7 @@
                 ohos:width="match_parent"
                 ohos:height="70vp"
                 ohos:text_alignment="center"
-                ohos:text="Rollback during the process is not supported"
+                ohos:text="$string:revert_unsupported"
                 ohos:text_color="#eeffffff"
                 ohos:text_size="30vp" />
 

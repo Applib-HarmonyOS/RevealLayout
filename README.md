@@ -11,7 +11,7 @@ We are very thankful to goweii Goweii and mbacuiz.
 
 ## Screenshot
 
-![Layout_ability_main](Images/RevealLayoutImage.png)
+![Layout_ability_main](Images/RevealLayoutDemoImage.png)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Integration method
@@ -26,27 +26,20 @@ Starting from version 4.13.1, v is not added before the version number, and you 
 quoting.
 ```
     dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
-    testImplementation 'junit:junit:4.13.1'
-    ohosTestImplementation 'com.huawei.ohos.testkit:runner:1.0.0.200'
-    implementation project(':reveallayout')
-}
+        implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
+        testImplementation 'junit:junit:4.13.1'
+        ohosTestImplementation 'com.huawei.ohos.testkit:runner:1.0.0.200'
+        implementation project(':reveallayout')
+    }
 ```
-2. For using reveallayout in separate application using har file, add the har file in the entry/libs folder and add the 
-dependencies in entry/build.gradle file.
-```groovy
-	dependencies {
-		implementation fileTree(dir: 'libs', include: ['*.har'])
-		testImplementation 'junit:junit:4.13'
-	}
-```
-3. For using RevealLayout from a remote repository in separate application, add the below dependencies in 
+2. For using RevealLayout from a remote repository in separate application, add the below dependencies in 
 entry/build.gradle file.
 ```
     dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.13.1'
-}
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        testImplementation 'junit:junit:4.13.1'
+        ohosTestImplementation 'com.huawei.ohos.testkit:runner:1.0.0.200'
+    }
 ``` 
 
 ## Usage

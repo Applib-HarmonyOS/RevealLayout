@@ -2,10 +2,6 @@
 <DirectionalLayout xmlns:ohos="http://schemas.huawei.com/res/ohos"
     ohos:width="match_content"
     ohos:height="match_content"
-    ohos:left_padding="15vp"
-    ohos:right_padding="15vp"
-    ohos:top_padding="7vp"
-    ohos:bottom_padding="7vp"
     ohos:background_element="$graphic:reveal_layout_checked_bg"
     ohos:orientation="horizontal">
 
@@ -13,11 +9,9 @@
         ohos:id="$+id:toast_text"
         ohos:width="match_content"
         ohos:height="match_content"
-        ohos:text="checked"
+        ohos:text="$string:checked_view"
         ohos:background_element="$color:colorAccent"
         ohos:text_size="39vp"
-        ohos:end_margin="8vp"
-        ohos:right_margin="8vp"
-        ohos:left_margin="8vp"/>
+        ohos:margin="10vp"/>
 
 </DirectionalLayout>

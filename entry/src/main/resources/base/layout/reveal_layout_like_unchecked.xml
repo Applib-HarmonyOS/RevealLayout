@@ -5,5 +5,5 @@
     ohos:height="100vp"
     ohos:scale_mode="stretch"
     ohos:image_src="$media:like_solid"
-       ohos:alignment="center"
+    ohos:alignment="center"
     ohos:background_element="$color:white"/>

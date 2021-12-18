@@ -9,8 +9,19 @@
       "value": "Java_Empty Ability"
     },
     {
-      "name": "mainability_HelloWorld",
-      "value": "Hello World"
+      "name": "checked_view",
+      "value": "Followed"
+    },
+    {
+      "name": "unchecked_view",
+      "value": "+  Follow"
+    },{
+      "name": "revert_supported",
+      "value": "FollowRollback during supported"
+    },
+    {
+      "name": "revert_unsupported",
+      "value": "Rollback during the process is not supported"
     }
   ]
 }
