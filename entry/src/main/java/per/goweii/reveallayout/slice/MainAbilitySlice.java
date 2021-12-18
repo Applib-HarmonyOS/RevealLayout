@@ -20,6 +20,9 @@ import ohos.aafwk.ability.AbilitySlice;
 import ohos.aafwk.content.Intent;
 import per.goweii.reveallayout.ResourceTable;
 
+/**
+ * Ability to demo the RevealLayout view.
+ */
 public class MainAbilitySlice extends AbilitySlice {
 
     /**

@@ -122,9 +122,8 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
 
 protected Component createCheckedView(Context context) {
         Component checkedView;
-        if (mCheckedLayoutId > 0) {
-            System.out.println("entry into createcheckedview2 " + mCheckedLayoutId);
-            checkedView = LayoutScatter.getInstance(getContext()).parse(mCheckedLayoutId, null, false);
+        if (getCheckedLayoutId() > 0) {
+            checkedView = LayoutScatter.getInstance(getContext()).parse(getCheckedLayoutId(), null, false);
         } else {
             checkedView = new Component(getContext());
         }
@@ -135,8 +134,8 @@ protected Component createCheckedView(Context context) {
 
 protected Component createUncheckedView(Context context) {
         Component uncheckedView;
-        if (mUncheckedLayoutId > 0) {
-            uncheckedView = LayoutScatter.getInstance(getContext()).parse(mUncheckedLayoutId, this,
+        if (getUncheckedLayoutId() > 0) {
+            uncheckedView = LayoutScatter.getInstance(getContext()).parse(getUncheckedLayoutId(), this,
                     false);
         } else {
             uncheckedView = new Component(getContext());

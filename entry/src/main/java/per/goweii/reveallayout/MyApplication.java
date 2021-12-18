@@ -18,6 +18,9 @@ package per.goweii.reveallayout;
 
 import ohos.aafwk.ability.AbilityPackage;
 
+/**
+ * Application to intialize the screen.
+ */
 public class MyApplication extends AbilityPackage {
 
     /**

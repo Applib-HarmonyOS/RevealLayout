@@ -300,7 +300,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      */
     @Override
     public void onStop(Animator animator) {
-        Logger.getLogger(TAG,"Animation stopped");
+        Logger.getLogger(TAG, "Animation stopped");
     }
 
     /**
@@ -310,7 +310,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      */
     @Override
     public void onCancel(Animator animator) {
-        Logger.getLogger(TAG,"Animation cancelled");
+        Logger.getLogger(TAG, "Animation cancelled");
     }
 
     /**
@@ -333,7 +333,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      */
     @Override
     public void onPause(Animator animator) {
-        Logger.getLogger(TAG,"Animation pause");
+        Logger.getLogger(TAG, "Animation pause");
     }
 
     /**
@@ -343,14 +343,14 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      */
     @Override
     public void onResume(Animator animator) {
-        Logger.getLogger(TAG,"Animation onresume");
+        Logger.getLogger(TAG, "Animation onresume");
     }
 
     /**
      *Calculate the onAnimationReverse.
      */
     public void onAnimationReverse() {
-        Logger.getLogger(TAG,"Animation reverse");
+        Logger.getLogger(TAG, "Animation reverse");
     }
 
     /**
