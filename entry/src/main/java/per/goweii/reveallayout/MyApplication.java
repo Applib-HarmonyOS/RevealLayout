@@ -19,6 +19,10 @@ package per.goweii.reveallayout;
 import ohos.aafwk.ability.AbilityPackage;
 
 public class MyApplication extends AbilityPackage {
+
+    /**
+     * Called when application is intialized.
+     */
     @Override
     public void onInitialize() {
         super.onInitialize();

@@ -21,17 +21,29 @@ import ohos.aafwk.content.Intent;
 import per.goweii.reveallayout.ResourceTable;
 
 public class MainAbilitySlice extends AbilitySlice {
+
+    /**
+     * Called when ability is starting.
+     *
+     * @param intent Intent
+     */
     @Override
     public void onStart(Intent intent) {
         super.onStart(intent);
         super.setUIContent(ResourceTable.Layout_ability_main);
     }
 
+    /**
+     * Called when ability is in active.
+     */
     @Override
     public void onActive() {
         super.onActive();
     }
 
+    /**
+     * Called when ability is in forground.
+     */
     @Override
     public void onForeground(Intent intent) {
         super.onForeground(intent);

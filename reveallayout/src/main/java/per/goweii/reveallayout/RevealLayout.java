@@ -1,12 +1,13 @@
 package per.goweii.reveallayout;
 
+import java.util.logging.Logger;
 import ohos.agp.animation.Animator;
 import ohos.agp.animation.AnimatorValue;
 import ohos.agp.animation.AnimatorValue.ValueUpdateListener;
 import ohos.agp.components.AttrSet;
 import ohos.agp.components.Component;
-import ohos.agp.components.ComponentContainer;
 import ohos.agp.components.Component.TouchEventListener;
+import ohos.agp.components.ComponentContainer;
 import ohos.agp.components.LayoutScatter;
 import ohos.agp.components.StackLayout;
 import ohos.agp.render.Path;
@@ -26,6 +27,7 @@ import per.goweii.reveallayout.utils.AttrUtils;
 public class RevealLayout extends StackLayout implements Checkable, ValueUpdateListener, Animator.StateChangedListener,
         TouchEventListener {
 
+    private static final String TAG = RevealLayout.class.getSimpleName();
     private Component mCheckedView;
     private Component mUncheckedView;
     private int mCheckedLayoutId = 0;
@@ -298,7 +300,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      */
     @Override
     public void onStop(Animator animator) {
-        return;
+        Logger.getLogger(TAG,"Animation stopped");
     }
 
     /**
@@ -308,7 +310,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      */
     @Override
     public void onCancel(Animator animator) {
-        return;
+        Logger.getLogger(TAG,"Animation cancelled");
     }
 
     /**
@@ -331,7 +333,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      */
     @Override
     public void onPause(Animator animator) {
-        return;
+        Logger.getLogger(TAG,"Animation pause");
     }
 
     /**
@@ -341,14 +343,14 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      */
     @Override
     public void onResume(Animator animator) {
-        return;
+        Logger.getLogger(TAG,"Animation onresume");
     }
 
     /**
      *Calculate the onAnimationReverse.
      */
     public void onAnimationReverse() {
-        return;
+        Logger.getLogger(TAG,"Animation reverse");
     }
 
     /**

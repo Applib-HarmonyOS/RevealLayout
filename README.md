@@ -1,5 +1,8 @@
 # RevealLayout
 
+[![.github/workflows/main.yml](https://github.com/applibgroup/RevealLayout/actions/workflows/main.yml/badge.svg)](https://github.com/applibgroup/RevealLayout/actions/workflows/main.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=applibgroup_RevealLayout&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=applibgroup_RevealLayout)
+
 ## Introduction
 
 Reveal the effect layout, you can specify 2 sub-layouts, and switch the selected state with the circular reveal effect.

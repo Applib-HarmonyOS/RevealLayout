@@ -21,6 +21,12 @@ import ohos.aafwk.content.Intent;
 import per.goweii.reveallayout.slice.MainAbilitySlice;
 
 public class MainAbility extends Ability {
+
+    /**
+     * Called when ability is starting.
+     *
+     * @param intent Intent
+     */
     @Override
     public void onStart(Intent intent) {
         super.onStart(intent);
