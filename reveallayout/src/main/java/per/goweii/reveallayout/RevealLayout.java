@@ -300,7 +300,7 @@ public class RevealLayout extends StackLayout implements Checkable, ValueUpdateL
      */
     @Override
     public void onStop(Animator animator) {
-        Logger.getLogger(TAG, "Animation stopped");
+        mAnimator = null;
     }
 
     /**

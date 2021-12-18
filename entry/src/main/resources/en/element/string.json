@@ -17,11 +17,11 @@
       "value": "+  Follow"
     },{
       "name": "revert_supported",
-      "value": "FollowRollback during supported"
+      "value": "Rollback supported"
     },
     {
       "name": "revert_unsupported",
-      "value": "Rollback during the process is not supported"
+      "value": "Rollback is not supported"
     }
   ]
 }
