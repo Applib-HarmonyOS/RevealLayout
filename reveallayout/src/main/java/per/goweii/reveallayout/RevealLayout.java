@@ -1,7 +1,5 @@
 package per.goweii.reveallayout;
 
-import java.util.logging.Logger;
-
 import ohos.agp.animation.Animator;
 import ohos.agp.animation.AnimatorValue;
 import ohos.agp.animation.AnimatorValue.ValueUpdateListener;
@@ -17,6 +15,8 @@ import ohos.app.Context;
 import ohos.multimodalinput.event.MmiPoint;
 import ohos.multimodalinput.event.TouchEvent;
 import per.goweii.reveallayout.utils.AttrUtils;
+
+import java.util.logging.Logger;
 
 /**
  * Reveal the effect layout
