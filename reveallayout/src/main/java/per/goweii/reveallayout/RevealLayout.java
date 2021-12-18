@@ -15,7 +15,6 @@ import ohos.app.Context;
 import ohos.multimodalinput.event.MmiPoint;
 import ohos.multimodalinput.event.TouchEvent;
 import per.goweii.reveallayout.utils.AttrUtils;
-
 import java.util.logging.Logger;
 
 /**
