@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<StackLayout xmlns:ohos="http://schemas.huawei.com/res/ohos"
+             xmlns:app="http://schemas.huawei.com/res-auto"
+             ohos:width="match_parent"
+             ohos:height="match_parent"
+             ohos:orientation="horizontal">
+
+    <per.goweii.reveallayout.RevealLayout
+        ohos:width="match_parent"
+        ohos:height="match_parent"
+        app:rl_allowRevert="false"
+        app:rl_animDuration="1000"
+        app:rl_checkWithExpand="true"
+        app:rl_checked="false"
+        app:rl_checkedLayout="$layout:layout_dark"
+        app:rl_uncheckWithExpand="true"
+        app:rl_uncheckedLayout="$layout:layout_light"/>
+
+</StackLayout>

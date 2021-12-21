@@ -1,1 +1,1 @@
-include ':app', ':reveallayout'
+include ':entry', ':reveallayout'

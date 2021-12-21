@@ -1,0 +1,27 @@
+{
+  "string": [
+    {
+      "name": "entry_MainAbility",
+      "value": "entry_MainAbility"
+    },
+    {
+      "name": "mainability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "checked_view",
+      "value": "Followed"
+    },
+    {
+      "name": "unchecked_view",
+      "value": "+  Follow"
+    },{
+      "name": "revert_supported",
+      "value": "Rollback supported"
+    },
+    {
+      "name": "revert_unsupported",
+      "value": "Rollback is not supported"
+    }
+  ]
+}
