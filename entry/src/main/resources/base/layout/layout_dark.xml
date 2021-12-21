@@ -22,11 +22,11 @@
 
             <Text
                 ohos:width="match_parent"
-                ohos:height="70vp"
+                ohos:height="40vp"
                 ohos:text_alignment="center"
                 ohos:text="$string:revert_supported"
                 ohos:text_color="#eeffffff"
-                ohos:text_size="30vp" />
+                ohos:text_size="15vp" />
 
             <per.goweii.reveallayout.RevealLayout
                 ohos:width="match_content"
@@ -136,11 +136,11 @@
 
             <Text
                 ohos:width="match_parent"
-                ohos:height="70vp"
+                ohos:height="40vp"
                 ohos:text_alignment="center"
                 ohos:text="$string:revert_unsupported"
                 ohos:text_color="#eeffffff"
-                ohos:text_size="30vp" />
+                ohos:text_size="15vp" />
 
             <per.goweii.reveallayout.RevealLayout
                 ohos:width="match_content"
