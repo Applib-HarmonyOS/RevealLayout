@@ -24,7 +24,7 @@ We are very thankful to goweii Goweii and mbacuiz.
 In order to use the library, add the following line to your **root** gradle file:
 
 
-1. Add dependency in build.gradle of project app directory
+1.Add dependency in build.gradle of project app directory
 Starting from version 4.13.1, v is not added before the version number, and you need to pay attention to it when 
 quoting.
 ```
@@ -35,16 +35,26 @@ quoting.
         implementation project(':reveallayout')
     }
 ```
-2. For using RevealLayout from a remote repository in separate application, add the below dependencies in 
+
+2.For using RevealLayout in separate application using har file, add the har file in the
 entry/build.gradle file.
 ```
-    dependencies {
-        implementation fileTree(dir: 'libs', include: ['*.jar'])
-        testImplementation 'junit:junit:4.13.1'
-        ohosTestImplementation 'com.huawei.ohos.testkit:runner:1.0.0.200'
-    }
-``` 
+	dependencies {
+            implementation fileTree(dir: 'libs', include: ['*.har'])
+            testImplementation 'junit:junit:4.13.1'
+            ohosTestImplementation 'com.huawei.ohos.testkit:runner:1.0.0.200'
+	}
+```
 
+3.For using RevealLayout from a remote repository in separate application, add the below dependencies in entry/build.gradle file.
+
+```
+	dependencies {
+           implementation 'dev.applibgroup:reveallayout:1.0.0'
+           testCompile 'junit:junit:4.12'
+	}
+
+```
 ## Usage
 
 To use RevealLayout in your app simply follow below simple steps:
